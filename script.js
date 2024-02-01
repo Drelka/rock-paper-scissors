@@ -1,8 +1,14 @@
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+const result = document.querySelector("#result");
 
-alert('Please type "game()" for each round into console to play.')
+rockBtn.addEventListener("click", () => result.textContent = (playRound("rock")));
+paperBtn.addEventListener("click", () => result.textContent = (playRound("paper")));
+scissorsBtn.addEventListener("click", () => result.textContent = (playRound("scissors")));
+
 
 let options = ['rock', 'paper', 'scissors'];
-
 
 function getComputerChoice(){
     return options[Math.floor(Math.random() * options.length)];
@@ -11,7 +17,7 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
     
     computerSelection = getComputerChoice();
-    playerSelection = prompt("Choose rock, paper, or scissors: ", "rock").toLowerCase();
+    playerSelection;
     
     let result;
     let wrongInput = "No such choice. Try again!";
@@ -65,24 +71,20 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-let playerScore = 0;
-let compScore = 0;
+// const points = document.querySelector("#points");
 
-function game(){
-    let gameResult = playRound();
+// let playerScore = 0;
+// let compScore = 0;
+
+// points.textContent = `${playerScore} : ${compScore}`;
+
+//     let gameResult = result.;
     
-    if (gameResult.includes("win")){
-        playerScore += 1;
-    } else if (gameResult.includes("lose")){
-        compScore += 1;
-    } else {}
+//     if (gameResult.includes("win")){
+//         playerScore += 1;
+//     } else if (gameResult.includes("lose")){
+//         compScore += 1;
+//     } else {}
 
-    alert(`${gameResult} 
-                    Player ${playerScore}:${compScore} Computer`);
+    
 
-    if (playerScore == 5){
-        alert(`You win the game ${playerScore}:${compScore}!`);
-    } else if (compScore == 5){
-        alert(`Computer beats you ${compScore}:${playerScore}!`);
-    } else {}
-}
