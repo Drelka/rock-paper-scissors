@@ -2,16 +2,43 @@ const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 const result = document.querySelector("#result");
-
-rockBtn.addEventListener("click", () => result.textContent = (playRound("rock")));
-paperBtn.addEventListener("click", () => result.textContent = (playRound("paper")));
-scissorsBtn.addEventListener("click", () => result.textContent = (playRound("scissors")));
-
+const points = document.querySelector("#points");
 
 let options = ['rock', 'paper', 'scissors'];
 
+let playerScore = 0;
+let compScore = 0;
+
+rockBtn.addEventListener("click", () => {
+    result.textContent = (playRound("rock"));
+    if (x == "scissors") {
+        playerScore += 1}
+    else if (x == "paper") {
+        compScore += 1}
+    points.textContent = `${playerScore} : ${compScore}`;
+});
+
+paperBtn.addEventListener("click", () => {
+    result.textContent = (playRound("paper"));
+    if (x == "rock") {
+        playerScore += 1}
+    else if (x == "scissors") {
+        compScore += 1}
+    points.textContent = `${playerScore} : ${compScore}`;
+});
+
+scissorsBtn.addEventListener("click", () => {
+    result.textContent = (playRound("scissors"));
+    if (x == "paper") {
+        playerScore += 1}
+    else if (x == "rock") {
+        compScore += 1}
+    points.textContent = `${playerScore} : ${compScore}`;
+});
+
+
 function getComputerChoice(){
-    return options[Math.floor(Math.random() * options.length)];
+    return x = options[Math.floor(Math.random() * options.length)];
 }
 
 function playRound(playerSelection, computerSelection){
@@ -46,7 +73,6 @@ function playRound(playerSelection, computerSelection){
         }
     }
     
-    //"scissors"
     else {
         if (playerSelection === "rock"){
             result = "Rock beats scissors. You win!";
@@ -60,31 +86,7 @@ function playRound(playerSelection, computerSelection){
     }
 
     let finalResult = `Computer selection was ${computerSelection}. ${result}`;
-
-    if (playerSelection === "rock"
-    || playerSelection === "paper"
-    || playerSelection === "scissors"){
-        return finalResult;
-    } else {
-        return wrongInput;
-    }
-
+    return finalResult;
 }
 
-// const points = document.querySelector("#points");
-
-// let playerScore = 0;
-// let compScore = 0;
-
-// points.textContent = `${playerScore} : ${compScore}`;
-
-//     let gameResult = result.;
-    
-//     if (gameResult.includes("win")){
-//         playerScore += 1;
-//     } else if (gameResult.includes("lose")){
-//         compScore += 1;
-//     } else {}
-
-    
 
