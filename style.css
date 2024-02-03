@@ -2,14 +2,33 @@
     text-align: center;
 }
 
+.box {
+    margin: 50px auto auto;
+    background-color: blanchedalmond;
+    border: 5px rgb(134, 134, 214) solid;
+    border-radius: 20px 40px;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+#points {
+    font-size: 50px;
+    align-self: center;
+}
+
 #result {
     margin-top: 50px;
     font-size: 25px;
 }
 
-#points {
+#endOfGame {
     margin-top: 50px;
-    font-size: 50px;
+    font-family: monospace;
+    font-size: large;
+    font-weight: 900;
+    color: red;
 }
 
 .img,
@@ -20,10 +39,10 @@
 .btn {
     margin: 5px;
     background-color: white;
-    border: 10px solid black;
+    border: 10px solid rgb(160, 160, 160);
 }
 
 .btn:hover {
     /* border: 3px solid blue; */
-    border-color: grey;
+    border-color: black;
 }
